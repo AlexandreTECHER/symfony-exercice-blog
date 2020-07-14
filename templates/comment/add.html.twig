@@ -1,0 +1,26 @@
+{% extends 'post/read.html.twig' %}
+
+{% block title %}Ajouter un commentaire
+{% endblock %}
+
+{% block body %}
+
+	{{ parent() }}
+
+	<h2>Ajouter un commentaire</h2>
+
+	<form action="" method="POST">
+
+		<div>
+			<label for="username">Nom d'utilisateur</label>
+			<input type="text" id="username" name="username">
+		</div>
+		<div>
+			<label for="body">Commentaire</label>
+			<textarea name="body" id="body" cols="30" rows="10"></textarea>
+		</div>
+		<button type="submit">Envoyer</button>
+
+	</form>
+
+{% endblock %}

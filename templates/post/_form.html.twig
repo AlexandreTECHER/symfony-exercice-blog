@@ -1,0 +1,9 @@
+<form action="" method="POST">
+		<div>
+			<input type="text" name="title" value="{{ post.title|default('') }}">
+		</div>
+		<textarea name="body" cols="60" rows="30">{{ post.body|default('') }}</textarea>
+		<div>
+			<button>Envoyer</button>
+		</div>
+	</form>

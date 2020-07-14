@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+	<h1>{{ post.title }} ({{ post.nbLikes }})</h1>
+    <p>Par : {{ post.author.firstname }}</p>
+	<p>{{ post.body }}</p>
+	<p>{{ post.createdAt|date("l j F à G:i") }}</p>
+
+	<p>
+		<a href="{{ path('post_browse') }}">Retour à l'accueil</a>
+	</p>
+
+	<h3>Commentaires</h3>
+
+	{% for comment in post.comments %}
+		<div>
+			<strong>{{ comment.username }}</strong> : {{ comment.body }}
+            <p>Le : {{ comment.createdAt|date('Y-m-d') }}</p>
+		</div>
+
+	{% endfor %}
+
+{% endblock %}

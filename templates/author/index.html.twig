@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+
+<ul>
+
+    {% for author in authors %}
+        <li>
+            {{ author.firstname }} - {{ author.lastname }}
+            <ul>
+                {% for post in author.posts %}
+                   <li><a href="{{ path('post_read', {'id' : post.id } ) }}">{{ post.title }}</a></li> 
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
